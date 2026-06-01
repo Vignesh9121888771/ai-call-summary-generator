@@ -355,8 +355,8 @@ Call notes:
 ${notes}`;
 
     try {
-      const apiKey = document.getElementById('apiKeyInput') ? document.getElementById('apiKeyInput').value.trim() : '';
-      const headers = { 'Content-Type': 'application/json' };
+      const apiKey = '';  // ← paste your key here
+const headers = { 'Content-Type': 'application/json', 'open-api-key': apiKey };
       if (apiKey) headers['x-api-key'] = apiKey;
 
       const res = await fetch('https://api.anthropic.com/v1/messages', {
